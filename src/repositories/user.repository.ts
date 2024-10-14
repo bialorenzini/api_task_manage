@@ -12,3 +12,15 @@ export const findAllUsers = async () => {
 export const findUserByEmail = async(email:string) => {
     return User.findFirst({where: {email}})
 }
+
+export const findUserById = async (id:number) => {
+    return User.findFirst({where:{id}})
+}
+
+export const updateUser = async (id:number,data: UserInterface) => {
+    return User.update({where:{id}, data})
+}
+
+export const deleteUser = async (id:number) => {
+    return User.delete({where:{id}})
+}
